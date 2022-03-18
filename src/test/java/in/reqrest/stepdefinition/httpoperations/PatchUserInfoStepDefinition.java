@@ -1,4 +1,4 @@
-package in.reqrest.stepdefinition;
+package in.reqrest.stepdefinition.httpoperations;
 
 import in.reqrest.stepdefinition.setup.services.ServiceSetUp;
 import io.cucumber.java.en.Given;
@@ -18,7 +18,6 @@ import java.time.format.DateTimeFormatter;
 import static in.reqrest.util.PatchUserDataJSONConverter.updateUserBody;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasToString;
 
 public class PatchUserInfoStepDefinition extends ServiceSetUp {
     private static Logger LOGGER = Logger.getLogger(PatchUserInfoStepDefinition.class);
@@ -43,7 +42,7 @@ public class PatchUserInfoStepDefinition extends ServiceSetUp {
     public void elUsuarioRealizaLaPeticionDeActualizacionDeDatosConElId(Integer id) {
         try {
             response = request.when()
-                    .patch(USER_UPDATE + id);
+                    .patch(USER_PATCH_AND_DELETE + id);
         } catch (Exception e) {
             LOGGER.warn(e.getMessage(), e);
             Assertions.fail(e.getMessage());

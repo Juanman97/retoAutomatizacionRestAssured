@@ -8,7 +8,7 @@ import static in.reqrest.util.Log4jValues.LOG4J_PROPERTIES_FILE_PATH;
 public class ServiceSetUp {
     private static final String BASE_URI = "https://reqres.in";
     private static final String BASE_PATH = "/api";
-    protected static final String USER_UPDATE = "/users/";
+    protected static final String USER_PATCH_AND_DELETE = "/users/";
 
     protected void generalSetup() {
         setupLog4j();
